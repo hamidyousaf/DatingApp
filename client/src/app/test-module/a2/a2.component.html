@@ -1,0 +1,186 @@
+<!-- <p>a2 works!</p>
+<button (click)="getData('helo')">Click me</button>
+<br>
+<input #box (keyup)="getData(box.value)" placeholder="keyup" />
+<br>
+<input #box1 (keydown)="getData(box1.value)" placeholder="keydown" />
+<br>
+<input #box2 (blur)="getData(box2.value)" placeholder="blur" />
+<br>
+<h1 (mouseover)="getData('Over')">Mouse Over</h1>
+<br>
+<h1 (mouseleave)="getData('Leave')">Mouse Leave</h1>
+<br>
+<input #box3 (cut)="getData(box3.value)" placeholder="cut" />
+<br>
+<input #box4 (copy)="getData(box4.value)" placeholder="copy" />
+<br> -->
+<!-- <input #box5 placeholder="Enter name" name="username" autocomplete="off" (keyup)="getData(box5.value)" />
+<p>Display val: {{displayVal}}</p> -->
+<!-- <style>
+    .heading{
+    color: purple;
+}
+</style>
+<p class="heading" style="color: aqua;">Counter: {{number}}</p>
+<button (click)="counter('-')">--</button>
+<button (click)="counter('+')">++</button> -->
+
+<!--We cannot pass true false value in interpolation-->
+<!-- <input type="text" value={{title}} disabled={{disable}} /> Interpolation
+<br>
+<br>
+<input type="text" [value]="title" [disabled]="disable" /> Property Binding  -->
+
+<!-- <h1 *ngIf="show then ifBlock else elseBlock"></h1>
+
+<ng-template #ifBlock>
+    <h1>If Block</h1>
+</ng-template>
+<ng-template #elseBlock>
+    <h1>Else Block</h1>
+</ng-template> -->
+
+<!-- <ng-template [ngIf]="color === 'RED'">
+    <p>RED Color</p>
+</ng-template>
+<ng-template [ngIf]="color === 'GREEN'">
+    <p>GREEN Color</p>
+</ng-template>
+<ng-template [ngIf]="color === 'BLUE'">
+    <p>BLUE Color</p>
+</ng-template> -->
+
+<!-- <div [ngSwitch]="color">
+    <h1 *ngSwitchCase="'RED'">RED Color</h1>
+    <h1 *ngSwitchCase="'GREEN'">GREEN Color</h1>
+    <h1 *ngSwitchCase="'BLUE'">BLUE Color</h1>
+    <h1 *ngSwitchDefault>UNKNOWN Color</h1>
+</div>
+
+<div *ngFor="let item of users">
+    <li>{{item}}</li>
+</div>
+<div *ngFor="let item of userDetails">
+    <li>{{item.name}} - {{item.email}} -- {{item.phone}}</li>
+</div>
+-->
+<!-- <div *ngFor="let item of userDetails">
+    <li>{{item.name}}</li>
+    <li>{{item.email}}</li>
+    <li>{{item.phone}}</li>
+    <li>Accounts</li>
+    <ul *ngFor="let account of item.accounts">
+        <li >{{account}}</li>
+    </ul>
+</div>   -->
+
+<!-- Style Binding | Dynamic Style -->
+<!-- <h1 [style.color]="textColor" [style.backgroundColor]="bgColor" [style.width]="'20%'">Style Binding</h1>
+<button (click)="updateColor(); alertMessage();">Update Color</button> -->
+
+<!-- <form #BasicForm="ngForm" (ngSubmit)="postData(BasicForm.value)">
+    <input ngModel name="name" placeholder="Enter username" />
+    <br><br>
+    <input ngModel  name="email"  placeholder="Enter Email" />
+    <br><br>
+    <input ngModel name="phone" placeholder="Enter Phone" />
+    <br><br>
+    <button>Submit</button>
+</form> -->
+<!-- Toggle -->
+<!-- <h1 *ngIf="show">{{title}}</h1>
+<button (click)="toggle()">Show/Hide</button> -->
+
+<!-- Create Todo list -->
+<!-- <input type="text" #text  placeholder="Enter a task" />
+<br><br>
+<button (click)="addTask(text.value)">Add</button>
+
+<ul *ngFor="let task of tasks">
+    <li>{{task}} - <button (click)="removeTask(task)">Remove</button></li>
+</ul> -->
+
+
+<!-- Pass data in child component -->
+<!-- <app-a1 [Val]="number" [users]="users" ></app-a1> -->
+<!-- <ul *ngFor="let user of users">
+    <app-a1 [user]="user"></app-a1>
+</ul> -->
+
+<!-- Get data from child -->
+<!-- <app-a1 (addDataEvent) = "addItem($event)"></app-a1> -->
+
+<!-- Two way binding: we can display and update property at a same time -->
+
+<!-- <h1>{{aProperty}}</h1>
+<input type="text" [(ngModel)]="aProperty" />
+<input type="text" [(ngModel)]="aProperty" />
+ -->
+
+<!-- Template Reference: we use # to assign id, then we can get any property of input. -->
+<!-- <input #box name="username" placeholder="Enter user name" />
+<button (click)="templateReference(box.value)" >Get Value</button>
+<button (click)="templateReference(box.name)" >Get Name Property</button>
+<button (click)="templateReference(box.placeholder)" >Get Placeholder Property</button> -->
+
+<!-- Pipes: It use to transfer one format to another format -->
+<!-- <h1>{{title}}</h1>
+<h1>{{title | lowercase}}</h1>
+<h1>{{title | uppercase}}</h1>
+<h1>{{today | date}}</h1>
+<h1>{{today | date : 'fullDate'}}</h1>
+<h1>{{today | date : 'fullTime'}}</h1>
+<h1>{{title | slice : 6 : 11 | uppercase}}</h1>
+<h1>{{20 | currency: 'USD'}}</h1>
+<h1>{{20 | number: '3.2'}}</h1> -->
+
+<!-- Custom Pipes: ng g p USD-PKR -->
+<!-- <h1>{{20 | USDPKR : 250}}</h1> -->
+
+
+<!-- Template Driven Form: Mostly work in the component html -->
+<!-- Reactive Form: Mostly work in the component class -->
+<!-- Reactive Form -->
+
+<!-- <form [formGroup]="loginForm" (ngSubmit)="login()" >
+    <input type="text" formControlName="username" >
+    <span style="color: red;" *ngIf="usernameGetter && usernameGetter.invalid && usernameGetter.touched">Username required</span>
+    <br><br>
+    <input type="text" formControlName="password" >
+    <span style="color: red;" *ngIf="passwordGetter && passwordGetter.invalid && passwordGetter.touched">Password required</span>
+    <button [disabled]="loginForm.invalid" type="submit">submit</button>
+</form> -->
+
+<!-- Custom Directives: ng g d redColor-->
+<!-- <h1 appRedColor>{{title}}</h1> -->
+
+<!-- Routing: This is also called static routing-->
+<!-- 1- Create multiple components
+2- Add links in navbar
+    <a class="nav-link" routerLink='/home' routerLinkActive='active' >Home</a>
+    <a class="nav-link" routerLink='/about' routerLinkActive='active' >About</a>
+    <a class="nav-link" routerLink='/contact-us' routerLinkActive='active' >Contact us</a>
+3- Add it in app-routing file
+    {path:"home", component: HomeComponent},
+    {path:"about", component: AboutComponent},
+    {path:"contact-us", component: COntactUsComponent}
+     <router-outlet></router-outlet> -->
+
+<!-- Services -->
+<form #basicForm="ngForm" (ngSubmit)="addUser(basicForm.value)">
+    <input type="text" name="username" placeholder="Enter username" ngModel>
+    <br>
+    <br>
+    <input type="text" name="email" placeholder="Enter email" ngModel>
+    <br>
+    <br>
+    <input type="password" name="password" placeholder="Enter password" ngModel>
+    <br>
+    <br>
+    <button type="submit">Add User</button>
+</form>
+
+<ul *ngFor="let user of usersFromService">
+    <li>{{user.username}}</li>
+</ul>

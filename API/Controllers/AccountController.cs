@@ -33,9 +33,18 @@ namespace API.Controllers
             var user = new AppUser(){
                 UserName = register.Username.ToLower(),
                 PasswordHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(register.Password)),
-                PasswordSalt = hmac.Key
+                PasswordSalt = hmac.Key,
+                DateOfBirth = DateTime.UtcNow,
+                KnownAs = "Hamid Yousaf",
+                Created = DateTime.UtcNow,
+                LastActive = DateTime.UtcNow,
+                Gender = "MALE",
+                Introduction = "This is introduction",
+                LookingFor = "Female",
+                Intrests = "Female",
+                City = "Faisalabad",
+                Country = "Pakistan",
             };
-
             _context.Users.Add(user);
             await _context.SaveChangesAsync();
 

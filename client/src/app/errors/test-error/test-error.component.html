@@ -1,0 +1,14 @@
+<ng-container >
+    <button class="btn btn-outline-primary" (click)="get500Error()">Test 500 Error</button>
+    <button class="btn btn-outline-primary" (click)="get400Error()">Test 400 Error</button>
+    <button class="btn btn-outline-primary" (click)="get401Error()">Test 401 Error</button>
+    <button class="btn btn-outline-primary" (click)="get404Error()">Test 404 Error</button>
+    <button class="btn btn-outline-primary" (click)="get400ValidationError()">Test 400 ValidationError Error</button>
+    <div *ngIf="validatorErrors.length > 0">
+        <div class="text-danger">
+            <li *ngFor="let err of validatorErrors">
+                {{err}}
+            </li>
+        </div>
+    </div>
+</ng-container>

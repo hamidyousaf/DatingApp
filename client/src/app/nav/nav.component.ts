@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { AccountService } from '../_services/account.service';
+import { TestService } from '../_services/test.service';
 
 @Component({
   selector: 'app-nav',
@@ -9,10 +10,15 @@ import { AccountService } from '../_services/account.service';
   styleUrls: ['./nav.component.css']
 })
 export class NavComponent implements OnInit {
-  constructor(public accountService: AccountService, private router: Router, private toastr : ToastrService) { }
+  constructor(public accountService: AccountService, private router: Router, private toastr : ToastrService,
+  private _testService: TestService) { }
   model: any = {};
-  
+  subject: string = "Subject";
   ngOnInit(): void {
+    this._testService.subject.subscribe(
+      result => {
+      this.subject = result;
+    });
   }
 
   login(){

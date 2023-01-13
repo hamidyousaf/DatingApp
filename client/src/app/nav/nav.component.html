@@ -13,6 +13,18 @@
               <a class="nav-link" routerLink='/messages'routerLinkActive='active' >Messages</a>
           </li>
       </ng-container>
+      <li class="nav-item">
+        <a class="nav-link" routerLink='/errors'routerLinkActive='active' >Errors</a>
+      </li>
+      <!-- <li class="nav-item">
+        <a class="nav-link" routerLink='/about'routerLinkActive='active' >About</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link" routerLink='/group-routing'routerLinkActive='active' >Group Routing</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" >{{subject}}</a>
+      </li> -->
       </ul>
 
         <form *ngIf="(accountService.currentUser$ | async) === null" #loginForm="ngForm" class="d-flex" role="search" (ngSubmit)="login()" autocomplete="off">
@@ -37,7 +49,7 @@
             </button>
             <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu"
                 role="menu" aria-labelledby="button-basic">
-              <li role="menuitem"><a class="dropdown-item" href="#">Edit Profile</a></li>
+              <li role="menuitem"><a class="dropdown-item" routerLink="/member/edit">Edit Profile</a></li>
               <li class="divider dropdown-divider"></li>
               <li role="menuitem"><a class="dropdown-item" href="#" (click)="loggedOut()" >Logout</a>
               </li>

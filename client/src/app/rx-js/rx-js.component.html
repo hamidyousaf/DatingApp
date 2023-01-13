@@ -1,0 +1,140 @@
+<p>{{title}}</p>
+<!-- Promise:
+    1- async
+    2- return single value
+        resolve() ==> mean return successfully
+        reject() ==> mean return failed.
+
+Obserable:
+    1- async | sync
+    2- return stream of values
+        LIKE ==> 0-----1-----2-----3
+Async is use to process background. -->
+
+<!-- <button (click)="getData()">Get Data</button> -->
+
+<!-- FromEvent operator -->
+<!-- How we create Obserable stream by using FromEvent.
+    1)- we can create stream as below by:
+        User Input(Click on button)
+        Http Request
+        Array
+        Objects
+what handle obserable:
+    1) when we subscribe observer, it handle data, error and, completion.
+    2) Example: .subscribe(
+        data => console.log(data),
+        error => console.log(error),
+        completion => console.log(completion),
+    )
+
+<button #btn >Add Video</button> -->
+
+<!-- DebounceTime and distinctUntilChanged operator -->
+<!-- <input #input placeholder="Test DebounceTime" /> -->
+
+<!-- Subject is use for data communication and cross component communication -->
+<!-- Subject and BehaviorSubject -->
+
+<!-- <div class="row">
+    <div class="col-lg-4">
+        <app-comp1></app-comp1>
+    </div>
+    <div class="col-lg-4">
+        <app-comp2></app-comp2>
+    </div>
+    <div class="col-lg-4">
+        <app-comp3></app-comp3>
+    </div>
+</div> -->
+
+<!-- ReplaySubject -->
+<!-- <div class="row">
+    <div class="col-lg-4">
+        <div class="form-group">
+            <label>Comp 1</label>
+            <input class="form-control mb-2" #Input placeholder="Enter name" />
+            <button (click)="addVideo(Input.value)">Enter</button>
+        </div>
+    </div>
+</div>
+<hr>
+<div class="row">
+    <div class="col-lg-4">
+        <ul *ngFor="let user of userList1">
+            <li>{{user}}</li>
+        </ul>
+    </div>
+    <div class="col-lg-4">
+        <button (click)="userList2Subscribe()">{{user2Subscribe}}</button>
+        <ul *ngFor="let user of userList2">
+            <li>{{user}}</li>
+        </ul>
+    </div>
+</div> -->
+<!-- AsyncSubject: Emit its last value on completion -->
+<!-- <div class="row">
+    <div class="col-lg-4">
+        <div class="form-group">
+            <label>Add Video</label>
+            <input #Input class="form-control" placeholder="Enter name...." />
+            <button (click)="addAsyncVideo(Input.value)">Enter</button>
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <div class="form-group">
+            <label>On Complete</label>
+            <input class="form-control" [value]="onCompleteVal"  readonly />
+            <button (click)="onComplete()">Complete Subcription</button>
+        </div>
+    </div>
+</div> -->
+
+<!-- <button #btn1 >Send Request</button>
+<h1>Number of Calls: {{count}}</h1> -->
+<!-- ShareReplay() -->
+<!-- <div class="row">
+    <div class="col-lg-4">
+        <label>All Users</label>
+        <ul *ngFor="let x of allUsers | async">
+            <li>{{x.email}}</li>
+            <li>{{x.username}}</li>
+            <li>{{x.gender}}</li>
+        </ul>
+    </div>
+    <div class="col-lg-4">
+        <label>Male Users</label>
+        <ul *ngFor="let x of maleUsers | async">
+            <li>{{x.email}}</li>
+            <li>{{x.username}}</li>
+            <li>{{x.gender}}</li>
+        </ul>
+    </div>
+    <div class="col-lg-4">
+        <label>Female Users</label>
+        <ul *ngFor="let x of femaleUsers | async">
+            <li>{{x.email}}</li>
+            <li>{{x.username}}</li>
+            <li>{{x.gender}}</li>
+        </ul>
+    </div>
+</div> -->
+
+<div class="row">
+    <div class="col-lg-6">
+        <select #name >
+            <option value="Hamid">Hamid</option>
+            <option value="Hassan">Hassan</option>
+            <option value="Hamza">Hamza</option>
+        </select>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-6">
+        <select #color >
+            <option value="Red">Red</option>
+            <option value="Green">Green</option>
+            <option value="Blue">Blue</option>
+        </select>
+    </div>
+</div>
